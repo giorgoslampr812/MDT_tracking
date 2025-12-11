@@ -21,17 +21,11 @@ Creates monotonic autocalibrated rt relation which is saved as a root file.
 hit_radii.py - 
 Assigns drift radii column in hits csv file using the rt relation.
 
-fa_loop.py - 
-Finds tracks with 3 hits (segments) using channel geometry for single TDC (mezzanine) using a seeding algorithm. 
+muon_tracker_fixed.cpp - 
+Finds perpendicular tracks with 6 hits using channel geometry for TDC pairs (mezzanine) using a seeding algorithm. 
 
-mat_tr.py - 
-Matches track pairs in odd and even TDCs (mezzanines) using the linear a,b parameters, y=ax+b, to determine tracks with 6 hits. Assigns a unique group_id in each track. 
-
-group_hits.py -
-Creates output with all 6 hits forming a track which is saved as grouped_track_hits_long.csv. 
-
-pair_pl.py - 
-Plots the first 50 or any unique group_id for debugging purposes. 
+pl_tr.py - 
+Plots the first 50 or any unique track_id for debugging purposes. 
 
 FILE FORMATS
 
@@ -39,13 +33,9 @@ hits.csv - Saved hit information from MiniDAQ DAT file, size 1 million hits.
 
 hits_with_radius.csv - Identical to hits.csv just containing drift_radius column. 
 
-fitted_tracks_hits.csv - Output of fa_loop.py containing the 3 hits that form the track and some auxillary information about the track like id etc. 
+tracked_out.csv - Output of muon_tracker_fixed.cpp containing the 6 hits that form the track and some auxillary information about the track like id etc. 
 
-fitted_tracks_summary.csv - Output of fa_loop.py containing the tracks and some auxillary information id, chi2ndf etc. 
 
-matched_track_pairs.csv - Output of mat_tr.py just showing which track_ids form a single track. 
-
-grouped_track_hits_long.csv - Output of group_hits.py which contains the information of the 6 hits that form a track.
 
 
 
